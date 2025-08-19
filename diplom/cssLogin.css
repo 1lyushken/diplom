@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    background-color: #f0f0f0;
+    background-image: url('bg/bg.jpg'); /* Путь к изображению */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Убираем повторение фона */
+    background-attachment: fixed; /* Закрепляем фон */
+    position: relative; /* Для того, чтобы потом разместить псевдоэлемент */
+}
+
+/* Псевдоэлемент для размытия фона */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bg/bg.jpg'); /* Путь к изображению */
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px); /* Применяем размытие */
+    z-index: -1; /* Фон будет за содержимым */
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.connection-status {
+    margin-bottom: 15px;
+    color: #4CAF50;
+}
+
+.error-message {
+    margin-bottom: 15px;
+    color: #f44336;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.footer {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #888;
+}
